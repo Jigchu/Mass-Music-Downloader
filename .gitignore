@@ -1,0 +1,12 @@
+# Configuration Files
+*.conf
+
+# Ignore khinsider
+khinsider
+
+# Ignore Music Files
+*.opus
+*.flac
+
+# Ignore __pycache__
+__pycache__
