@@ -113,7 +113,7 @@ def unpack_albums(categories: list[str]):
 
 def unpack(root: pathlib.Path, new_path: pathlib.Path):
     for f in root.glob(pattern='./*'):
-        f.rename(new_path / f"{f.name}{f.suffix}")
+        f.rename(new_path / f"{f.name}")
 
     return
 
@@ -168,12 +168,12 @@ def sort_album(categories: list[str], category: str, song: tuple[str, str]):
             destination.mkdir(parents=True, exist_ok=True)
 
     for item in downloaded_album:
-            item.rename(destination / f'{item.name}{item.suffix}')
+        item.rename(destination / f'{item.name}')
 
     if downloaded_album == []:
         downloaded_albums: pathlib.Path = downloaded_albums[0]
         for f in downloaded_albums.glob("./*"):
-            f.rename(destination / f'{f.name}{f.suffix}')
+            f.rename(destination / f'{f.name}')
         downloaded_albums.rmdir()
 
     return
